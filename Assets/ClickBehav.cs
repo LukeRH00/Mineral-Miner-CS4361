@@ -14,7 +14,7 @@ public class ClickBehav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PauseScript.isPaused)
         {
             RaycastHit hitData;
             //Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
