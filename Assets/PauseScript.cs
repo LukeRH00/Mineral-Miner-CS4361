@@ -7,11 +7,13 @@ public class PauseScript : MonoBehaviour
 {
     public GameObject MainUI;
     public GameObject PauseUI;
+    public GameObject StoreUI;
     public static bool isPaused;
     void Start()
     {
         isPaused = false;
         PauseUI.SetActive(false);
+        StoreUI.SetActive(false);
         MainUI.SetActive(true);
     }
 
@@ -29,12 +31,24 @@ public class PauseScript : MonoBehaviour
                 pauseGame();
             }
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (StoreUI.activeSelf)
+            {
+                resumeGame();
+            }
+            else
+            {
+                storeMenu();
+            }
+        }
     }
 
     public void resumeGame()
     {
         isPaused = false;
         PauseUI.SetActive(false);
+        StoreUI.SetActive(false);
         MainUI.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -44,6 +58,18 @@ public class PauseScript : MonoBehaviour
     {
         isPaused = true;
         PauseUI.SetActive(true);
+        StoreUI.SetActive(false);
+        MainUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+    }
+
+    public void storeMenu()
+    {
+        isPaused = true;
+        PauseUI.SetActive(false);
+        StoreUI.SetActive(true);
         MainUI.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
