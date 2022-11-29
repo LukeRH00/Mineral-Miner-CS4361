@@ -5,10 +5,10 @@ using UnityEngine;
 public class ClickBehav : MonoBehaviour
 {
     // Start is called before the first frame update
-    private BoxCollider thisBC;
+    public BoxCollider thisBC;
     void Start()
     {
-        thisBC = GameObject.Find(name).GetComponent<BoxCollider>();
+        thisBC = gameObject.GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
