@@ -5,13 +5,13 @@ using TMPro;
 
 public class displayStoreText : MonoBehaviour
 {
+    //Store text objects
     public TextMeshProUGUI upB;
     public TextMeshProUGUI upF;
     public TextMeshProUGUI autoB;
     public TextMeshProUGUI autoF;
     public TextMeshProUGUI pntB;
     public TextMeshProUGUI pntF;
-
 
     public TextMeshProUGUI ucB;
     public TextMeshProUGUI ucF;
@@ -21,6 +21,7 @@ public class displayStoreText : MonoBehaviour
 
     void Update()
     {
+        //display text with value of static variables
         upB.text = "Current Upgrade: x" + GlobalScoring.clickDmg.ToString();
         upF.text = "Current Upgrade: x" + GlobalScoring.clickDmg.ToString();
 
@@ -40,7 +41,7 @@ public class displayStoreText : MonoBehaviour
 
 
 
-
+    //function to upgrade tool, increments clickDmg
     public void upgradeTool()
     {
         if(GlobalScoring.points >= GlobalScoring.uCost)
@@ -51,6 +52,7 @@ public class displayStoreText : MonoBehaviour
         }
     }
 
+    //store function to increment autoClicks
     public void upgradeAuto()
     {
         if (GlobalScoring.points >= GlobalScoring.aCost)

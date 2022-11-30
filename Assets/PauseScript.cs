@@ -9,6 +9,8 @@ public class PauseScript : MonoBehaviour
     public GameObject PauseUI;
     public GameObject StoreUI;
     public static bool isPaused;
+    
+    //set main game UI to active, hide other menus
     void Start()
     {
         isPaused = false;
@@ -17,9 +19,9 @@ public class PauseScript : MonoBehaviour
         MainUI.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //escape key pauses/unpauses game
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(isPaused)
@@ -31,6 +33,8 @@ public class PauseScript : MonoBehaviour
                 pauseGame();
             }
         }
+
+        //S-key is a shortcut for opening/closing store menu
         if (Input.GetKeyDown(KeyCode.S))
         {
             if (StoreUI.activeSelf)
@@ -44,6 +48,8 @@ public class PauseScript : MonoBehaviour
         }
     }
 
+
+    //functions for displaying their respective menus
     public void resumeGame()
     {
         isPaused = false;
@@ -64,7 +70,6 @@ public class PauseScript : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0f;
     }
-
     public void storeMenu()
     {
         isPaused = true;
@@ -76,6 +81,7 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    //function for exit game button
     public void exitGame()
     {
         UnityEditor.EditorApplication.isPlaying = false;

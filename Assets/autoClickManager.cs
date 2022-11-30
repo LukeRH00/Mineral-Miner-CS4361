@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class autoClickManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //internal clock for auto-click feature
     private int clock;
     void Start()
     {
         clock = 80;
     }
 
-    // Update is called once per frame
+    
+
     void Update()
     {
+        //only calculate clock if there is at least one autoClicker
         if (GlobalScoring.autoClicks > 0)
         {
+            //decrement clock, check if 0
             clock--;
             if (clock <= 0)
             {
+                //if 0, reset clock, increase points by autoClick amount
                 GlobalScoring.points += GlobalScoring.autoClicks;
                 clock = 80;
             }
