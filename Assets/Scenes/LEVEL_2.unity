@@ -9740,6 +9740,7 @@ GameObject:
   - component: {fileID: 1381059655}
   - component: {fileID: 1381059654}
   - component: {fileID: 1381059653}
+  - component: {fileID: 1381059656}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -9797,6 +9798,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1381059656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381059652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac3772d355bbfe44b27f7898bd99ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1388064181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13218,7 +13231,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.7264151, g: 0.5105248, b: 0.10622107, a: 1}
+  m_Color: {r: 0.7254902, g: 0.29718533, b: 0.105882324, a: 1}
   m_Intensity: 3
   m_Range: 7
   m_SpotAngle: 30
@@ -13579,7 +13592,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.7264151, g: 0.5105248, b: 0.10622107, a: 1}
+  m_Color: {r: 0.7254902, g: 0.29718533, b: 0.105882324, a: 1}
   m_Intensity: 3
   m_Range: 7
   m_SpotAngle: 30
@@ -13592,7 +13605,7 @@ Light:
     m_Strength: 1
     m_Bias: 0
     m_NormalBias: 0.4
-    m_NearPlane: 3.89
+    m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
