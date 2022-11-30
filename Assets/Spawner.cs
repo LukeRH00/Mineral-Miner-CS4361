@@ -6,22 +6,44 @@ public class Spawner : MonoBehaviour
 {
     public GameObject levelModel;
     public int totalSpawned;
+    private Quaternion orient;
+    public GameObject leaveText;
+
     void Start()
     {
-        totalSpawned = Random.Range(3, 5);
+        //Hide Level Progression Text
+        leaveText.SetActive(false);
+
+        //Get preset rotation of crystal prefab
+        orient = Quaternion.Euler(levelModel.transform.eulerAngles.x, levelModel.transform.eulerAngles.y, levelModel.transform.eulerAngles.z);
+        
+        //Generate random number of crystals, update static variables
+        totalSpawned = Random.Range(4, 8);
+        GlobalScoring.itemsRemaining = totalSpawned;
+
+        //Spawn crystals in random locations
         for(int i = 0; i < totalSpawned; i++)
         {
-            float dist = Random.Range(2.5f, 3.9f);
+            //random radius and angle from center of room
+            float dist = Random.Range(2.9f, 3.9f);
             float alpha = Random.Range(-Mathf.PI, Mathf.PI);
             Vector3 randLoc = new Vector3(Mathf.Cos(alpha), 0, Mathf.Sin(alpha)) * dist;
+            
+            //random height from cave floor
             randLoc.y = Random.Range(1.0f, 4.5f);
-            Instantiate(levelModel, randLoc, Quaternion.identity);
+            Instantiate(levelModel, randLoc, orient);
         }
     }
 
-    // Update is called once per frame
+    
+
+    //Check if there are any crystals remaining
+    //If not, make Level Progression Text Visible
     void Update()
     {
-        
+        if(GlobalScoring.itemsRemaining <= 0 && !leaveText.activeSelf)
+        {
+            leaveText.SetActive(true);
+        }
     }
 }
