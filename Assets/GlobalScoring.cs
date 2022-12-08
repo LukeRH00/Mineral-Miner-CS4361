@@ -9,7 +9,7 @@ public class GlobalScoring : MonoBehaviour
     public static int level = 1;        //increases each scene change, determines "health" of crystals
     public static int clickDmg = 1;     //increasable in store, "weight" of each mouse click
     public static int itemsRemaining = 0; // number of gems/crystals still left in room
-    public static int instances = 0;    
+    public static int instances = 0;    //USED FOR DEBUGGING
 
     //costs for store upgrades
     public static int uCost = 5;
